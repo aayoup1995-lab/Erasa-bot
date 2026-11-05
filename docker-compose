@@ -1,0 +1,11 @@
+services:
+  erasa:
+    build: .
+    container_name: erasa_bot
+    restart: unless-stopped
+    env_file:
+      - .env
+    volumes:
+      - ./data:/app/data
+    environment:
+      DB_PATH: /app/data/erasa.db
